@@ -1,0 +1,22 @@
+from selenium import webdriver
+import time
+a=webdriver.Chrome()
+class Automation:
+    def open_url(self,url):
+        a.get(url)
+        a.maximize_window()
+    def login_amazon(self,username,pwd):
+        a.find_element_by_xpath("//*[@id='nav-link-accountList-nav-line-1']").click()
+        un = a.find_element_by_id("ap_email")
+        un.send_keys(username)
+        a.find_element_by_id("continue").click()
+        pw = a.find_element_by_name("password")
+        pw.send_keys(pwd)
+        a.find_element_by_id("signInSubmit").click()
+    def scroll_down(self):
+        time.sleep(2)
+        a.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+ki=Automation()
+ki.open_url("https://www.amazon.in/")
+ki.login_amazon("enter username","password here")
+ki.scroll_down()
