@@ -1,0 +1,19 @@
+am=int(input("enter amount : "))
+d={}
+while am>0:
+    if am>100:
+        di=am/100
+        re=am%100
+        d["dragon fruit"]=int(di)
+        am=re
+    elif am>20:
+        di=am/20
+        re=am%20
+        d["apples"]=int(di)
+        am=re
+    elif am>=1:
+        di = am / 1
+        re = am % 1
+        d["grapes"] = int(di)
+        am = re
+print(d)
