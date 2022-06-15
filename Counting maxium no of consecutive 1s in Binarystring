@@ -1,0 +1,13 @@
+n="100000111000010000111000000000"
+s=""
+che=0
+ns=""
+for i in range(len(n)):
+    for j in range(i+1,len(n)):
+        s=n[i:j]
+        if "0" not in s:
+            if len(s)>che:
+                che = len(s)
+                ns=s
+print(ns)
+print(len(ns))
